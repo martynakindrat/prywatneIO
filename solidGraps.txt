@@ -1,0 +1,39 @@
+SOLID: - 5 zasad ktorych nie nalezy łamać
+
+1.Single responsibility 
+-usuwamy wyswietlanie we wszystkich klasach poza info
+-utworzenie osobnej klasa do BMI 
+
+2.OPEN/CLOSED
+-jest info 
+
+3.Liskov substitution- nie uzywamy
+
+4.Interface segregation
+-tak jak w punkcie 1. (rozbijamy klasy- "robimy porządek")
+
+5.Dependency inversion
+-ciezko to zmienic (pomyslimy) klasy musza byc zalezne dla sprawnosci programu
+
+
+GRAPS: 9 dobrych praktyk ktore nalezy stosowac 
+
+1.Information Expert- stosujemy w kazdej klasie
+
+2.Creator- idk
+
+3.Controler- obiekty w klasie logowanie potem obiekty w klasie user
+
+4.Low coupling (niskie sprzężenie) - chyba tak mamy
+
+5. High cohesion (wysoka spójność) - klasy skoncentrowane ściśle na 1 zadaniu (mamy tak)
+
+6. Polymorphism - np klasa przepis
+
+7. nie mamy
+
+8. Indirection nie mamy
+
+9. Protected variations (ochrona zmienności) - ?
+
+ 
