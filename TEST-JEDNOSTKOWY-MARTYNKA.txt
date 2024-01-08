@@ -1,0 +1,96 @@
+//  MARTYNA KINDRAT TESTY JEDNOSTKOWE ZADANIE 1
+//KALKULATOR
+
+
+//funkcje.cpp
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
+
+using namespace std;
+
+//Logarytm naturalnyh
+double LogarytmNaturalny(double x) {
+    return log(x);
+}
+
+// Obliczanie mediany
+double Mediana(double data[], int n) {
+    sort(data, data + n); // Sortowanie danych
+
+    if (n % 2 == 0) {
+        // Jeśli liczba danych jest parzysta, medianę liczymy jako średnią dwóch środkowych liczb
+        return (data[n / 2 - 1] + data[n / 2]) / 2.0;
+    }
+    else {
+        // Jeśli liczba danych jest nieparzysta, mediana to środkowa liczba
+        return data[n / 2];
+    }
+}
+
+
+// Exponent
+double Exponent(double x) {
+    return exp(x);
+}
+
+int main() {
+    //Logarytm
+    double wartoscLogarytmu = LogarytmNaturalny(5);
+    cout << "logarytm naturalny z 5= " << wartoscLogarytmu << endl;
+
+    // Mediana
+    double dane[] = { 3.5, 6.7, 8.9, 12.1, 5.4, 9.8 };
+    int n = sizeof(dane) / sizeof(dane[0]);
+    double mediana = Mediana(dane, n);
+
+    cout << "Mediana: " << mediana << endl;
+
+    //exponent
+    double wartoscExponent = Exponent(2);
+    cout << "Exponent 2: " << wartoscExponent << endl;
+
+    return 0;
+}
+
+//jednostkowy.cpp
+#include "pch.h"
+#include "C:/Users/marty/Desktop/TEST/inzynieria/inzynieria/funkcje.cpp"
+#include "CppUnitTest.h"
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace TestyJednostkowe
+{
+    TEST_CLASS(TestyFunkcji)
+    {
+    public:
+
+        TEST_METHOD(TestLogarytmNaturalny)
+        {
+            // Sprawdz ln 5
+            double expected = 1.60944; 
+            double result = LogarytmNaturalny(5);
+            Assert::AreEqual(expected, result, 0.0001); //Precyzja
+        }
+
+        TEST_METHOD(TestMediana)
+        {
+            // Sprawdz mediane
+            double dane[] = { 3.5, 6.7, 8.9, 12.1, 5.4, 9.8 };
+            int n = sizeof(dane) / sizeof(dane[0]);
+            double expected = 7.8; 
+            double result = Mediana(dane, n);
+            Assert::AreEqual(expected, result, 0.01); //precyzja
+        }
+
+        TEST_METHOD(TestExponent)
+        {
+            // Sprawdz exoponent 2
+            double expected = 7.38906; 
+            double result = Exponent(2);
+            Assert::AreEqual(expected, result, 0.00001); //Precyzja
+        }
+    };
+}
